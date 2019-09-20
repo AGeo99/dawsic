@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | LearnMore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="panel panel-default float-container">
+        <div class="panel-heading">
+            <h3 class="panel-title">Register form</h3>
+        </div>
+        <div class="panel-body">
+            <br>
+            <label>Please, complete the form and register into LearnMore to make questions!</label>
+            <br><br>
+            <form onsubmit="return false">
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon0">Name</span>
+                    <input type="text" class="form-control" placeholder="Name and Last name" aria-describedby="basic-addon0">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Username</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon2">Password</span>
+                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon2">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Confirm password</span>
+                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon4">Email</span>
+                    <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon4">
+                </div>
+                <br><br>
+                <div class="div-block">
+                    <div class="div-flex"></div>
+                    <a class="btn margin-r1" href="../index.html">Back to Home</a>
+                    <button class="btn btn-default" onclick="register(event)">Create account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../assets/js/fn.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/site/register.js"></script>
+</body>
+
+</html>

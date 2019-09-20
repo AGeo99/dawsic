@@ -1,0 +1,50 @@
+.float-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.div-block {
+    display: flex;
+    flex-direction: row;
+}
+.div-flex {
+    flex: 1 0 auto;
+}
+.margin-l1 {
+    margin-left: 10px;
+}
+.margin-l2 {
+    margin-left: 20px;
+}
+.margin-r1 {
+    margin-right: 10px;
+}
+.margin-r2 {
+    margin-right: 20px;
+}
+.barchat {
+    text-align: center;
+}
+.barc {
+    width: 100px;
+    border: 1px solid #ddd;
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+}
+
+.person1 {
+    height: 100px;
+    background-color: green;
+}
+.person2 {
+    height: 400px;
+    background-color: brown;
+}
+.person3 {
+    height: 150px;
+    background-color: blueviolet;
+}
