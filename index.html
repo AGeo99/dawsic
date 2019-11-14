@@ -16,6 +16,8 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
 </head>
 
 <body>
@@ -54,6 +56,22 @@
             </div>
         </div>
     </div>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyB3GXIEwJ0IqAf3YnleEXBDcgXT1kn3QIM",
+          authDomain: "dawsic.firebaseapp.com",
+          databaseURL: "https://dawsic.firebaseio.com",
+          projectId: "dawsic",
+          storageBucket: "dawsic.appspot.com",
+          messagingSenderId: "966016360488",
+          appId: "1:966016360488:web:52f06c49ca2e9d78ea151d",
+          measurementId: "G-NXSH1ERWGR"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <script src="./assets/js/fn.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
