@@ -8,7 +8,7 @@ function register(e){
             firebase.database().ref('users').set({name,email,password,username}, err => {
                 saveError(err);
             });
-            location.href = './user/home.html';
+            location.href = './login.html';
         }).catch(err => {
             saveError(err);
             Swal.fire({

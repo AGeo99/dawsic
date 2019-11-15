@@ -1,3 +1,11 @@
+(() => {
+    setTimeout(() => {
+        if(!uid()){
+            location.href = '../login.html';
+            localStorage.removeItem('user');
+        }
+    }, 1000);
+})();
 var questions = [];
 function questionTemplate(iteration){
     return `<div class="container-fluid">

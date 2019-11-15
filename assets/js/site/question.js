@@ -1,6 +1,12 @@
 var publicQuestions = [];
 
 (() => {
+    setTimeout(() => {
+        if(!uid()){
+            location.href = '../login.html';
+            localStorage.removeItem('user');
+        }
+    }, 1000);
     user = localStorage.getItem('user');
     user = JSON.parse(user);
     if(user){
@@ -13,6 +19,9 @@ var publicQuestions = [];
             });
             publicQuestionTemplate();
         });
+    } else {
+        location.href = '../login.html';
+        localStorage.removeItem('user');
     }
 })();
 

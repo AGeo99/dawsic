@@ -16,6 +16,11 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -30,7 +35,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="home.html">LearnMore</a>
-                <p class="navbar-text">Welcome {User}</p>
+                <p class="navbar-text">Welcome <span id="useremail">{User}</span></p>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -50,13 +55,25 @@
                 <div class="alert alert-info" role="alert">Statistics</div>
                 <div class="alert alert-success" role="alert">Congrats! You have the first place!</div>
                 <br>
-                <h1>Your score: 100 points (1st place)</h1>
-                <h2>Hendrickson: 91 points (2nd place)</h2>
-                <h3>Josep Lara: 50 point</h3>
-                <h3>Krat Lors: 49 point</h3>
+                <h1>Your score: <span id="mscore">-</span> point(s)</h1>
+                <output id="others"></output>
             </div>
         </div>
     </div>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyB3GXIEwJ0IqAf3YnleEXBDcgXT1kn3QIM",
+          authDomain: "dawsic.firebaseapp.com",
+          databaseURL: "https://dawsic.firebaseio.com",
+          projectId: "dawsic",
+          storageBucket: "dawsic.appspot.com",
+          messagingSenderId: "966016360488",
+          appId: "1:966016360488:web:52f06c49ca2e9d78ea151d",
+          measurementId: "G-NXSH1ERWGR"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <script src="../../assets/js/fn.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/site/home.js"></script>

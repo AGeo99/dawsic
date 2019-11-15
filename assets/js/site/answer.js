@@ -5,11 +5,19 @@ let currentans = null;
 
 let aquestions = [];
 let qanwers = [];
+let uuid = null;
 
 (() => {
+    setTimeout(() => {
+        if(!uid()){
+            location.href = '../login.html';
+            localStorage.removeItem('user');
+        }
+    }, 1000);
     user = localStorage.getItem('user');
     user = JSON.parse(user);
     if (user) {
+        uuid = user.user.uid;
         const hash = location.hash.replace('#', '');
         if(hash){
             firebase.firestore().collection('tests').doc(hash).get().then(_doc => {
@@ -28,6 +36,9 @@ let qanwers = [];
             alert('ID not allowed');
             location.href = './questions.html';
         }
+    } else {
+        location.href = '../login.html';
+        localStorage.removeItem('user');
     }
 })();
 
@@ -64,7 +75,7 @@ function answerQuestion(aid) {
     } else {
         const score = getScore();
         const response = {
-            doc, uanswers: qanwers, score
+            doc, uanswers: qanwers, score, uid: uuid
         }
         firebase.firestore().collection('answers').add({...response}).then(r => {
             Swal.fire({

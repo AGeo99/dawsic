@@ -1,6 +1,13 @@
 var questions = [];
 
 (() => {
+    
+    setTimeout(() => {
+        if(!uid()){
+            location.href = '../login.html';
+            localStorage.removeItem('user');
+        }
+    }, 1000);
     user = localStorage.getItem('user');
     user = JSON.parse(user);
     if (user) {
@@ -10,6 +17,9 @@ var questions = [];
             docs.forEach(snap => questions.push({...snap.data(), id: snap.id}));
             myQuestionTemplate();
         });
+    } else {
+        location.href = '../login.html';
+        localStorage.removeItem('user');
     }
 })();
 
@@ -17,6 +27,7 @@ function signout(e) {
     e.preventDefault();
     x = confirm('Are you want to sign out right now?');
     if (x) {
+        localStorage.removeItem('user');
         location.href = '../login.html';
     }
 }
