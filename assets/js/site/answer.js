@@ -4,7 +4,7 @@ let time = 30;
 let currentans = null;
 
 let aquestions = [];
-const qanwers = [];
+let qanwers = [];
 
 (() => {
     user = localStorage.getItem('user');
@@ -33,6 +33,7 @@ const qanwers = [];
 
 function setInformation() {
     if (doc) {
+        qanwers = [];
         $('#tq').html(doc.testname);
         time = parseInt(doc.timequiz);
         aquestions = doc.answers;
@@ -61,17 +62,29 @@ function answerQuestion(aid) {
         setQuestion(aquestions[++index]);
         timer();
     } else {
-        Swal.fire({
-            title: '9.8/10',
-            text: 'Test finished',
-            icon: 'info'
+        const score = getScore();
+        const response = {
+            doc, uanswers: qanwers, score
+        }
+        firebase.firestore().collection('answers').add({...response}).then(r => {
+            Swal.fire({
+                title: `${score}/10`,
+                text: 'Test finished',
+                icon: 'info'
+            });
+            setTimeout(() => location.href = './questions.html', 2000);
+        }).catch(err => {
+            saveError(err);
         });
-        setTimeout(() => location.href = './questions.html', 2000);
     }
 }
 
 function getScore(){
-    
+    let corrects = 0;
+    qanwers.forEach(el => {
+        if(el.is) corrects++;
+    });
+    return (corrects / qanwers.length) * 10;
 }
 
 function timer() {
