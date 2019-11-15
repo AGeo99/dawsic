@@ -78,7 +78,7 @@ function saveTest(){
         }).catch(err => {
             saveError(err);
             Swal.fire({
-                title: '¡Error!',
+                title: 'Error!',
                 text: "Can't save this document right now",
                 icon: 'error'
             });

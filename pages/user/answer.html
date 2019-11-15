@@ -16,6 +16,11 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -24,34 +29,58 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="div-block">
-                    <h1>Test title</h1>
+                    <h1>
+                        <span id="tq">Test title</span>
+                    </h1>
                     <div class="div-flex"></div>
-                    <h2>30 s</h2>
+                    <h2>
+                        <span id="tt">-</span>
+                        <small>s</small>
+                    </h2>
                 </div>
                 <hr>
                 <br>
-                <h3>What's the volcano name in Sivar?</h3>
+                <h3>
+                    <span id="q">What's the volcano name in Sivar?</span>
+                </h3>
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <p class="list-group-item-text"><b>A</b> San Salvador's Volcano</p>
+                    <a href="#" class="list-group-item active" onclick="answerQuestion(1)">
+                        <p class="list-group-item-text"><b>A</b>
+                            <span id="a1">San Salvador's Volcano</span>
+                        </p>
                     </a>
-                    <a href="#" class="list-group-item active">
-                        <p class="list-group-item-text"><b>B</b> Santa Ana's Volcano</p>
+                    <a href="#" class="list-group-item active" onclick="answerQuestion(2)">
+                        <p class="list-group-item-text"><b>B</b> 
+                            <span id="a2">Santa Ana's Volcano</span>
+                        </p>
                     </a>
-                    <a href="#" class="list-group-item active">
-                        <p class="list-group-item-text"><b>A</b> Chalate's Volcano</p>
+                    <a href="#" class="list-group-item active" onclick="answerQuestion(3)">
+                        <p class="list-group-item-text"><b>A</b>
+                            <span id="a3">Chalate's Volcano</span>
+                        </p>
                     </a>
-                </div>
-                <div class="div-block">
-                    <div class="div-flex"></div>
-                    <button class="btn btn-default">Next question</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyB3GXIEwJ0IqAf3YnleEXBDcgXT1kn3QIM",
+          authDomain: "dawsic.firebaseapp.com",
+          databaseURL: "https://dawsic.firebaseio.com",
+          projectId: "dawsic",
+          storageBucket: "dawsic.appspot.com",
+          messagingSenderId: "966016360488",
+          appId: "1:966016360488:web:52f06c49ca2e9d78ea151d",
+          measurementId: "G-NXSH1ERWGR"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <script src="../../assets/js/fn.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/site/home.js"></script>
+    <script src="../../assets/js/site/answer.js"></script>
 </body>
 
 </html>
